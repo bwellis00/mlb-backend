@@ -5,6 +5,8 @@ const router = express.Router();
 
 const app = express();
 
+var port = process.env.PORT || 8080;
+
 app.use(cors());
 
 const db = mysql.createConnection({
@@ -43,7 +45,7 @@ const db = mysql.createConnection({
 
 app.use('/', router);
 
-app.listen('3001', () => {
-    console.log('Server started on port 3001');
-});
 
+app.listen(port, function() {
+  console.log('Our app is running on http://localhost:' + port);
+});
