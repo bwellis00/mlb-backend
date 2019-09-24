@@ -4,7 +4,7 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5500;
 
 mongoose.connect(process.env.DATABASE_URL, { useUnifiedTopology: true, useNewUrlParser: true })
 const db = mongoose.connection
