@@ -8,10 +8,10 @@ const stat = require('../models/players')
 router.get('/:id', async (req, res) => {
 
     try{
-        const stats = await stat.find( { mlb_id: req.params.id })
+        const stats = await stat.find({ mlb_id: req.params.id }).sort({ Season: 1 })
         res.json(stats)
     } catch (err) {
-        res.stats(500).json({ message: err.message})
+        res.stats(500).json({ message: err.message })
     }
 
 })
