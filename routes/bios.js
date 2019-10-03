@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const stat = require('../models/stats')
+const bio = require('../models/bios')
 
 
 //get all stats for a player ID
@@ -8,10 +8,10 @@ const stat = require('../models/stats')
 router.get('/:id', async (req, res) => {
 
     try{
-        const stats = await stat.find({ playerid: req.params.id }).sort({ Season: 1 })
-        res.json(stats)
+        const bios = await bio.find({ playerid: req.params.id })
+        res.json(bios)
     } catch (err) {
-        res.stats(500).json({ message: err.message })
+        res.bios(500).json({ message: err.message })
     }
 
 })

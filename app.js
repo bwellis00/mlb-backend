@@ -16,7 +16,11 @@ app.use(express.json())
 app.use(cors());
 
 const statsRouter = require('./routes/stats')
+const biosRouter = require('./routes/bios')
+
 app.use('/stats', statsRouter)
+app.use('/bios', biosRouter)
+
 
 
 app.listen(PORT, () => console.log('server started'))
