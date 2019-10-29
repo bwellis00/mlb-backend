@@ -17,9 +17,11 @@ app.use(cors());
 
 const statsRouter = require('./routes/stats')
 const biosRouter = require('./routes/bios')
+const leadersRouter = require('./routes/leaders')
 
 app.use('/stats', statsRouter)
 app.use('/bios', biosRouter)
+app.use('/leaders', leadersRouter)
 
 
 
